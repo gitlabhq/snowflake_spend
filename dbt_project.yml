@@ -11,5 +11,4 @@ data-paths: ["data"]       # load CSVs from this directory with `dbt seed`
 models:
   snowflake_spend:
       vars:
-        warehouse_metering_table:
         cost_per_credit:
