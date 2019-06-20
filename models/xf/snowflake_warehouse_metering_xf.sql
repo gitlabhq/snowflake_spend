@@ -21,7 +21,7 @@ WITH base AS (
                date_trunc('month', end_time)::date   AS usage_month,
                datediff(hour, start_time, end_time)  AS usage_length,
                credits_used,
-               round(credits_used * 2.55, 2)         AS dollars_spent
+               round(credits_used * {{ var('cost_per_credit') }}, 2)         AS dollars_spent
         FROM base
 
 )
