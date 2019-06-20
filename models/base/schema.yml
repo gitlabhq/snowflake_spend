@@ -1,0 +1,11 @@
+version: 2
+
+models:
+    - name: snowflake_warehouse_metering
+      description: '{{ doc("snowflake_warehouse_metering") }}'
+      columns:
+      - name: warehouse_id
+      - name: warehouse_name
+      - name: start_time
+      - name: end_time
+      - name: credits_used
