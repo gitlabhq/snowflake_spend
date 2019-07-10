@@ -5,7 +5,7 @@ This is a [dbt](http://getdbt.com) package for understanding the cost your [Snow
 dbt has great [docs on package management](https://docs.getdbt.com/docs/package-management).
 
 We are working to get this package on the [dbt hub site](http://hub.getdbt.com).
-In the mean time, you can install it using the git package syntax, which the GitLab data team uses in our `[packages.yml](https://gitlab.com/gitlab-data/analytics/blob/master/transform/snowflake-dbt/packages.yml)` file
+In the mean time, you can install it using the git package syntax, which the GitLab data team uses in our [`packages.yml`](https://gitlab.com/gitlab-data/analytics/blob/master/transform/snowflake-dbt/packages.yml) file
 
 ```
 packages:
