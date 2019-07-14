@@ -2,8 +2,16 @@
 
 This is a [dbt](http://getdbt.com) package for understanding the cost your [Snowflake Data Warehouse](https://www.snowflake.com) is accruing.
 
-dbt has great [docs on package management](https://docs.getdbt.com/docs/package-management).
+To get started with this package, you will need to have access to the appropriate databases. 
 
+To grant appropriate roles for these tables the following command was run:
+```
+GRANT IMPORTED PRIVILEGES ON DATABASE snowflake TO ROLE <role>;
+```
+
+[Learn more about the appropriate permissions](https://docs.snowflake.net/manuals/user-guide/data-share-consumers.html#granting-privileges-on-a-shared-database).
+
+dbt has great [docs on package management](https://docs.getdbt.com/docs/package-management).
 We are working to get this package on the [dbt hub site](http://hub.getdbt.com).
 In the mean time, you can install it using the git package syntax, which the GitLab data team uses in our [`packages.yml`](https://gitlab.com/gitlab-data/analytics/blob/master/transform/snowflake-dbt/packages.yml) file
 
