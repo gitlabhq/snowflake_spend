@@ -1,4 +1,4 @@
-# snowflake_spend
+# Snowflake Spend dbt Package
 
 This is a [dbt](http://getdbt.com) package for understanding the cost your [Snowflake Data Warehouse](https://www.snowflake.com) is accruing.
 
