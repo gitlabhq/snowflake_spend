@@ -5,4 +5,4 @@ When you run `dbt compile`, the `{ref('')}` statements will get populated with y
 
 We welcome suggestions for improvement.
 
-![periscope_snowflake_spend.png]
+![periscope_snowflake_spend.png](periscope_snowflake_spend.png)
