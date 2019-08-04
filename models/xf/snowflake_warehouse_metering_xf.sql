@@ -11,6 +11,11 @@ WITH base AS (
 	FROM {{ ref('snowflake_warehouse_metering') }}
 
 
+), contract_rates AS (
+
+    SELECT *
+    FROM {{ ref('snowflake_amortized_rates') }}
+
 ), usage AS (
 
         SELECT warehouse_id,
@@ -18,11 +23,13 @@ WITH base AS (
 
                start_time,
                end_time,
-               date_trunc('month', end_time)::date   AS usage_month,
-               datediff(hour, start_time, end_time)  AS usage_length,
-               credits_used,
-               round(credits_used * {{ var('cost_per_credit') }}, 2)         AS dollars_spent
+               date_trunc('month', end_time)::date          AS usage_month,
+               date_trunc('day', end_time)::date            AS usage_day,
+               datediff(hour, start_time, end_time)         AS usage_length,
+               contract_rates.rate                          AS credit_rate,
+               round(credits_used * contract_rates.rate, 2) AS dollars_spent
         FROM base
+        LEFT JOIN contract_rates ON date_trunc('day', end_time) = contract_rates.date_day
 
 )
 
