@@ -18,18 +18,18 @@ In the mean time, you can install it using the git package syntax, which the Git
 ```
 packages:
   - git: https://gitlab.com/gitlab-data/snowflake_spend.git
-    revision: master
+    revision: v1.0.0
 ```
 
 You will need to update your `dbt_project.yml` to enable this package.
-You can see [how the GitLab data team has this configured](https://gitlab.com/gitlab-data/analytics/blob/master/transform/snowflake-dbt/dbt_project.yml#L82).
+You can see [how the GitLab data team has this configured](https://gitlab.com/gitlab-data/analytics/blob/master/transform/snowflake-dbt/dbt_project.yml).
 
 ```
 snowflake_spend:
   enabled: true
-  vars:
-    cost_per_credit: ## Add your cost per credit. This value does not need to be in quotes.
 ```
+
+You will need a csv called `snowflake_contract_rates.csv` which has two columns: effective date and rate. The effective date is the day the new contracted rate started and it should be in YYYY-MM-DD format. The rate is the per credit price for the given time period. You can see how the data team configures [their csv file](https://gitlab.com/gitlab-data/analytics/blob/master/transform/snowflake-dbt/data/snowflake_contract_rates.csv). You will need to run `dbt seed` for the csv to be loaded as a table and for the model to run succesfully.
 
 These models are documented and tested.
 If you'd like to see what these look like live, you can see them in [the GitLab Data Team's public dbt docs](https://gitlab-data.gitlab.io/analytics/dbt/snowflake/#!/model/model.snowflake_spend.snowflake_warehouse_metering_xf).
