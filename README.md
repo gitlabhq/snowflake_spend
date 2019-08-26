@@ -2,7 +2,7 @@
 
 This is a [dbt](http://getdbt.com) package for understanding the cost your [Snowflake Data Warehouse](https://www.snowflake.com) is accruing.
 
-To get started with this package, you will need to have access to the appropriate databases. 
+To get started with this package, you will need to have access to the appropriate databases.
 
 To grant appropriate roles for these tables the following command was run:
 ```
@@ -39,3 +39,21 @@ Big thanks to @tayloramurphy, who did most of the heavy lifting here.
 We include sample Periscope dashboards in the `/analytics` folder.
 
 This dbt package is made available by the GitLab Data Team under an MIT License.
+
+## Troubleshooting
+
+**Error: _Found duplicate project dbt_utils. This occurs when a dependency has the same project name as some other dependency._**
+
+You are most likely referencing dbt-utils using the git/revision syntax. Use the dbt Hub package syntax instead in your `packages.yml`, eg:
+
+```
+packages:
+
+  # Avoid this
+  - git: "https://github.com/fishtown-analytics/dbt-utils.git"
+    revision: 0.2.1
+
+  # Use this instead
+  - package: fishtown-analytics/dbt_utils
+    version: 0.2.1
+```
