@@ -9,6 +9,7 @@ models:
       - name: start_time
       - name: end_time
       - name: credits_used
+
     - name: snowflake_query_history
       description: '{{ doc("snowflake_warehouse_metering") }}'
       columns:
@@ -30,9 +31,6 @@ models:
         tests:
         - not_null
       - name: snowflake_role_name
-      - schema_name:
-        tests:
-        - not_null
       - name: snowflake_user_name
         tests:
         - not_null
