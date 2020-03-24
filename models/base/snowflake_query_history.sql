@@ -47,6 +47,7 @@ WITH source AS(
 
   {% endif %}
   QUALIFY ROW_NUMBER() OVER (PARTITION BY query_id ORDER BY query_id) = 1
+
 )
 
 SELECT * 
