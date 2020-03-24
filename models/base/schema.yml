@@ -18,27 +18,23 @@ models:
         - not_null
         - unique
       - name: database_id
-        tests:
-        - not_null
       - name: snowflake_session_id
       - name: warehouse_id
         tests:
         - not_null
       - name: database_name
-        tests:
-        - not_null
       - name: query_text
         tests:
         - not_null
       - name: snowflake_role_name
+        tests:
+        - not_null
       - name: snowflake_user_name
         tests:
         - not_null
       - name: query_result_rows_produced
         description: 'The number of rows produced as a result of the query output. This is a good proxy of the vol of output'
       - name: schema_name
-        tests:
-        - not_null
       - name: warehouse_name
       - name: query_end_time
         tests:
@@ -49,7 +45,5 @@ models:
       - name: query_spillover_local
       - name: query_spillover_remote
       - name: query_bytes_scanned
-        tests:
-        - not_null
       
         
