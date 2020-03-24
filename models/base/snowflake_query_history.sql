@@ -12,7 +12,6 @@ WITH source AS(
   limit 10
 )
 
-, renamed AS (
 
   SELECT 
     query_id                          AS snowflake_query_id,
