@@ -7,12 +7,13 @@
 
 
 WITH source AS(
+
   SELECT *
   FROM {{source('snowflake_account_usage','query_history')}}
   QUALIFY ROW_NUMBER() OVER (PARTITION BY query_id ORDER BY query_id) = 1
+  
 )
 
-, renamed AS (
 
   SELECT 
     query_id                          AS snowflake_query_id,
