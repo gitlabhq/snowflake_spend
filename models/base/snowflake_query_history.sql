@@ -6,7 +6,7 @@
 }}
 
 
-WITH source AS(
+WITH source AS (
 
   SELECT *
   FROM {{source('snowflake_account_usage','query_history')}}
