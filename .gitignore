@@ -1,5 +1,3 @@
 /target
 /dbt_modules
 /logs
-
-*.code-workspace
