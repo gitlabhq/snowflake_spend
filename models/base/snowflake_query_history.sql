@@ -11,9 +11,8 @@ WITH source AS(
   SELECT *
   FROM {{source('snowflake_account_usage','query_history')}}
   QUALIFY ROW_NUMBER() OVER (PARTITION BY query_id ORDER BY query_id) = 1
-  
-)
 
+), renamed AS (
 
   SELECT 
     query_id                          AS snowflake_query_id,
@@ -47,6 +46,7 @@ WITH source AS(
   WHERE query_start_time > (SELECT MAX(query_start_time)  FROM {{ this }})
 
   {% endif %}
+  
 )
 
 SELECT * 
