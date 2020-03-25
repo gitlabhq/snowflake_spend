@@ -11,7 +11,7 @@ models:
       - name: credits_used
 
     - name: snowflake_query_history
-      description: '{{ doc("snowflake_warehouse_metering") }}'
+      description: '{{ doc("snowflake_query_history") }}'
       columns:
       - name: snowflake_query_id
         tests:
