@@ -35,7 +35,7 @@ WITH source AS (
     -- metadata 
     end_time                          AS query_end_time,
     start_time                        AS query_start_time,
-    bytes_spilled_to_local_storage    AS query_spillover_local,
+    bytes_spilled_to_local_storage    AS query_bytes_spillover_local,
     bytes_spilled_to_remote_storage   AS query_spillover_remote,
     bytes_scanned                     AS query_bytes_scanned
 
