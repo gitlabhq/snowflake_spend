@@ -2,7 +2,7 @@ version: 2
 
 models:
     - name: snowflake_amortized_rates
-      descriptions: '{{ doc("snowflake_amortized_rates") }}'
+      description: '{{ doc("snowflake_amortized_rates") }}'
       columns:
       - name: effective_start_date
         tests:
