@@ -25,8 +25,6 @@ models:
       - name: database_id
       - name: snowflake_session_id
       - name: warehouse_id
-        tests:
-        - not_null
       - name: database_name
       - name: query_text
         tests:
