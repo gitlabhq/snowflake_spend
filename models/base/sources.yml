@@ -9,6 +9,7 @@ sources:
       database: false
       schema: false
       identifier: false
-    
+
     tables:
       - name: query_history
+      - name: warehouse_metering_history
