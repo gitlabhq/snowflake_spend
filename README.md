@@ -59,15 +59,17 @@ packages:
     version: 0.2.1
 ```
 
-## How this Package Gets Released -- Only for Maintainers
+## How this Package Gets Released -- For Maintainers Only
 
 In order to cut a new release of this package:
-    1. Create a new tag at the commit that is to be released. Incrementing either the major version, minor version, or bug version of the previously released tag.  The new tag name should follow the pattern `v#.#.#`.  Push the tag to origin/master, if the tag is created locally.
-    1. With a GitLab API-enabled private token create a new release with a command similar to this:
+1. Create a new tag at the commit that is to be released. Incrementing either the major version, minor version, or bug version of the previously released tag.  The new tag name should follow the pattern `v#.#.#`.  Push the tag to origin/master, if the tag is created locally.
+1. With a GitLab API-enabled private token create a new release with a command similar to this:
+
     ```
     curl --header 'Content-Type: application/json' --header "PRIVATE-TOKEN: <your-private-token>" \
     --data '{ "name": "dbt: snowflake_spend #.#.#", "tag_name": "v#.#.#", "description": "Initial tagged release"}' \
     --request POST https://gitlab.com/api/v4/projects/12955687/releases
     ```
-    1. Update the release notes by going to your tag[https://gitlab.com/gitlab-data/snowflake_spend/-/tags] and click on the "edit release notes" pencil.  The release notes should follow the same general form as the notes for v1.1.0 and include a bulleted summary.
-    1. Create a blog post like [this](https://about.gitlab.com/blog/2020/04/08/snowflake-spend-dbt-package-release/) with all of the details of the release.
+
+1. Update the release notes by going to your tag[https://gitlab.com/gitlab-data/snowflake_spend/-/tags] and click on the "edit release notes" pencil.  The release notes should follow the same general form as the notes for v1.1.0 and include a bulleted summary.
+1. Create a blog post like [this](https://about.gitlab.com/blog/2020/04/08/snowflake-spend-dbt-package-release/) with all of the details of the release.
