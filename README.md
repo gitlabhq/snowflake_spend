@@ -71,5 +71,5 @@ In order to cut a new release of this package:
     --request POST https://gitlab.com/api/v4/projects/12955687/releases
     ```
 
-1. Update the release notes by going to your tag[https://gitlab.com/gitlab-data/snowflake_spend/-/tags] and click on the "edit release notes" pencil.  The release notes should follow the same general form as the notes for v1.1.0 and include a bulleted summary.
+1. Update the release notes by going to your [tag](https://gitlab.com/gitlab-data/snowflake_spend/-/tags) and click on the "edit release notes" pencil.  The release notes should follow the same general form as the notes for v1.1.0 and include a bulleted summary of merged MRs and a thank you to contributors.
 1. Create a blog post like [this](https://about.gitlab.com/blog/2020/04/08/snowflake-spend-dbt-package-release/) with all of the details of the release.
