@@ -16,14 +16,14 @@ WITH base AS (
 
       start_time,
       end_time,
-      date_trunc('month', end_time)::date          AS usage_month,
-      date_trunc('day', end_time)::date            AS usage_day,
+      DATE_TRUNC('month', end_time)::DATE          AS usage_month,
+      DATE_TRUNC('day', end_time)::DATE            AS usage_day,
       DATEDIFF(hour, start_time, end_time)         AS usage_length,
       contract_rates.rate                          AS credit_rate,
       ROUND(credits_used * contract_rates.rate, 2) AS dollars_spent
     FROM base
     LEFT JOIN contract_rates 
-      ON date_trunc('day', end_time) = contract_rates.date_day
+      ON DATE_TRUNC('day', end_time) = contract_rates.date_day
 
 )
 

@@ -7,7 +7,7 @@ WITH contract_rates AS (
 
     SELECT  
       effective_date    AS effective_start_date,
-      DATEADD(day, -1, lead(effective_date, 1, '2059-01-01') OVER (
+      DATEADD(day, -1, LEAD(effective_date, 1, '2059-01-01') OVER (
           ORDER BY effective_date ASC
         ))              AS effective_end_date,
       rate
