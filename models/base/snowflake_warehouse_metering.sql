@@ -6,9 +6,9 @@ WITH base AS (
 )
 
 SELECT
-	warehouse_id,
-	warehouse_name,
-	start_time,
-	end_time,
-	credits_used
+  warehouse_id,
+  warehouse_name,
+  start_time,
+  end_time,
+  credits_used
 FROM base
