@@ -18,7 +18,7 @@ In the mean time, you can install it using the git package syntax, which the Git
 ```
 packages:
   - git: https://gitlab.com/gitlab-data/snowflake_spend.git
-    revision: v1.1.0
+    revision: v1.2.0
 ```
 
 You will need to update your `dbt_project.yml` to enable this package.
