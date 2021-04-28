@@ -34,7 +34,7 @@ You will need a csv called `snowflake_contract_rates.csv` which has two columns:
 These models are documented and tested.
 If you'd like to see what these look like live, you can see them in [the GitLab Data Team's public dbt docs](https://dbt.gitlabdata.com/#!/model/model.snowflake_spend.snowflake_amortized_rates).
 
-Maintainers of this projects are @tayloramurphy and @emilie.
+Maintainers of this projects are @m_walker and @jjstark.
 Reviewers are @mpeychet_.
 
 We include sample Sisense (formerly Periscope) dashboards in the `/analytics` folder.
